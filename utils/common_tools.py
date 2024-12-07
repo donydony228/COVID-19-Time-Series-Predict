@@ -42,10 +42,9 @@ def extract_target_data(data: pd.DataFrame) -> pd.Series:
 
     print(data.columns)
     target = input('Enter the column you need:')
-    date = data["date"]
-    target_data = data[target]
+    data = data[['date', target]]
 
-    return date, target_data
+    return data
 
 ### How to use the function
 # ---------------------------
