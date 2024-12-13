@@ -60,3 +60,16 @@ def extract_target_dataa(data: pd.DataFrame) -> pd.DataFrame:
 ### How to use the function
 # ---------------------------
 # date, target_data = extract_target_data(data)
+
+def extract_target_data_SIR(data: pd.DataFrame) -> pd.DataFrame:
+    
+    # This function extract the target data from the specified DataFrame
+    # Args:
+    #     data: pd.DataFrame: The DataFrame that contains the target data
+    # Returns:
+    #     date: pd.Series: The date column of the DataFrame
+    #     target_data: pd.Series: The target data column of the DataFrame
+
+    data = data[['date', 'new_cases', 'new_deaths', 'population']]
+ 
+    return data
