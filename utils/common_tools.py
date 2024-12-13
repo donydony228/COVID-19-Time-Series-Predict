@@ -50,7 +50,7 @@ def extract_target_data(data: pd.DataFrame) -> pd.Series:
 # ---------------------------
 # date, target_data = extract_target_data(data)
 
-def extract_target_data_SIR(data: pd.DataFrame) -> pd.DataFrame:
+def extract_SIR_target_data(data: pd.DataFrame) -> pd.DataFrame:
     
     # This function extract the target data from the specified DataFrame
     # Args:
