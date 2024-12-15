@@ -31,20 +31,31 @@ def read_covid_data() -> pd.DataFrame:
 # ---------------------------
 # data = read_covid_data()
 
-def extract_target_data(data: pd.DataFrame) -> pd.Series:
+def extract_target_dataa(data: pd.DataFrame) -> pd.DataFrame:
+    """
+    Extract the target data from the specified DataFrame.
+
+    Args:
+        data: pd.DataFrame: The DataFrame that contains the target data.
+
+    Returns:
+        pd.DataFrame: A DataFrame containing the 'date' column and the selected target columns.
+    """
+    print("Available columns:", list(data.columns))
+    target_columns = ['date']  # Always include 'date'
     
-    # This function extract the target data from the specified DataFrame
-    # Args:
-    #     data: pd.DataFrame: The DataFrame that contains the target data
-    # Returns:
-    #     date: pd.Series: The date column of the DataFrame
-    #     target_data: pd.Series: The target data column of the DataFrame
+    while True:
+        target = input("Enter a column you need (or type 'done' to finish): ").strip()
+        if target.lower() == 'done':
+            break
+        elif target in data.columns:
+            target_columns.append(target)
+        else:
+            print(f"Column '{target}' not found in the DataFrame. Please try again.")
+    
+    print("Selected columns:", target_columns)
+    return data[target_columns]
 
-    print(data.columns)
-    target = input('Enter the column you need:')
-    data = data[['date', target]]
-
-    return data
 
 ### How to use the function
 # ---------------------------
