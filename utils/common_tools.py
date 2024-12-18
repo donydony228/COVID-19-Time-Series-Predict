@@ -31,7 +31,7 @@ def read_covid_data() -> pd.DataFrame:
 # ---------------------------
 # data = read_covid_data()
 
-def extract_target_dataa(data: pd.DataFrame) -> pd.DataFrame:
+def extract_target_data(data: pd.DataFrame) -> pd.DataFrame:
     """
     Extract the target data from the specified DataFrame.
 
@@ -70,6 +70,6 @@ def extract_SIR_target_data(data: pd.DataFrame) -> pd.DataFrame:
     #     date: pd.Series: The date column of the DataFrame
     #     target_data: pd.Series: The target data column of the DataFrame
 
-    data = data[['date', 'total_cases', 'new_cases', 'new_deaths', 'population']]
+    data = data[['date', 'total_cases', 'new_cases', 'new_cases_smoothed', 'new_deaths', 'population']]
  
     return data
